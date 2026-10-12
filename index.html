@@ -71,20 +71,20 @@ nav a:hover{color:var(--red)}
 .tear .plate{width:100%}
 .cover{position:absolute;inset:-8px;display:grid;place-items:center;background:var(--yellow);border:4px solid var(--ink);
   background-image:radial-gradient(rgba(0,0,0,.14) 22%,transparent 24%);background-size:12px 12px;pointer-events:none;
-  animation:unroll 1.2s .5s cubic-bezier(.6,.05,.4,1) both}
+  animation:unroll .7s 0s cubic-bezier(.6,.05,.4,1) both}
 .cover span{font:400 clamp(1.4rem,5vw,3.2rem)/1 var(--sfx);letter-spacing:.04em;color:var(--red);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:4px 4px 0 var(--ink);white-space:nowrap}
 .roll{position:absolute;top:-14px;bottom:-14px;width:46px;left:calc(100% - 23px);border:4px solid var(--ink);border-radius:23px;pointer-events:none;
   background:linear-gradient(90deg,#C99A00 0,var(--yellow) 30%,#FFF3B0 50%,var(--yellow) 70%,#C99A00 100%);
-  animation:rollLeft 1.2s .5s cubic-bezier(.6,.05,.4,1) both,ripOff .5s 1.7s cubic-bezier(.5,0,.9,.4) forwards}
+  animation:rollLeft .7s 0s cubic-bezier(.6,.05,.4,1) both,ripOff .45s .7s cubic-bezier(.5,0,.9,.4) both}
 @keyframes unroll{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 100% 0 0)}}
 @keyframes rollLeft{from{left:calc(100% - 23px)}to{left:-23px}}
 @keyframes ripOff{0%{transform:none;opacity:1}30%{transform:translate(-10px,4px) rotate(-6deg)}100%{transform:translate(-140%,-160%) rotate(-70deg);opacity:0;visibility:hidden}}
 .char{position:absolute;bottom:-8%;height:128%;width:auto;z-index:3;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35));animation-fill-mode:both}
-.subbu{left:-15%;z-index:5;animation:flyLeft .9s 2s cubic-bezier(.2,.9,.3,1.25) both}
-.arjun{right:-17%;animation:flyRight .9s 2.25s cubic-bezier(.2,.9,.3,1.25) both}
+.subbu{left:-15%;z-index:5;animation:flyLeft .9s 1.1s cubic-bezier(.2,.9,.3,1.25) both}
+.arjun{right:-17%;animation:flyRight .9s 1.3s cubic-bezier(.2,.9,.3,1.25) both}
 @keyframes flyLeft{0%{transform:translate(-260%,-120%) rotate(-35deg) scale(.6);opacity:0}15%{opacity:1}100%{transform:none;opacity:1}}
 @keyframes flyRight{0%{transform:translate(260%,-120%) rotate(35deg) scale(.6);opacity:0}15%{opacity:1}100%{transform:none;opacity:1}}
-.gappu{position:absolute;left:50%;bottom:86%;width:27%;z-index:4;transform:translateX(-50%);animation:dropIn .8s 3s cubic-bezier(.3,1.3,.5,1) both}
+.gappu{position:absolute;left:50%;bottom:86%;width:27%;z-index:4;transform:translateX(-50%);animation:dropIn .8s 1.9s cubic-bezier(.3,1.3,.5,1) both}
 .gappu img{width:100%;filter:drop-shadow(3px 3px 0 rgba(0,0,0,.35))}
 @keyframes dropIn{0%{transform:translate(-50%,-260%) rotate(25deg);opacity:0}20%{opacity:1}100%{transform:translateX(-50%) rotate(-2deg);opacity:1}}
 @media (max-width:700px){
@@ -240,6 +240,18 @@ footer .soon{color:var(--yellow);font-weight:700}
 .price-body .then{color:var(--red);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
 .price-body .then small{color:var(--ink);-webkit-text-stroke:0}
 .save{display:inline-block;background:var(--red);color:var(--white);font:600 .78rem var(--tag);letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;transform:rotate(-2deg)}
+
+/* tap to open: everything waits until the cover is tapped */
+.logo-stage:not(.opened) .cover,.logo-stage:not(.opened) .roll,.logo-stage:not(.opened) .char,.logo-stage:not(.opened) .gappu{animation-play-state:paused}
+.open-btn{position:absolute;inset:-8px;z-index:6;background:none;border:0;padding:0;cursor:pointer;display:grid;place-items:end center}
+.open-btn:focus-visible{outline:4px solid var(--ink);outline-offset:4px}
+.tap{position:relative;margin-bottom:16px;background:var(--white);border:3px solid var(--ink);border-radius:999px;box-shadow:4px 4px 0 var(--ink);
+  padding:8px 18px;font:400 clamp(1rem,2.6vw,1.35rem)/1 var(--sfx);letter-spacing:.05em;color:var(--ink);white-space:nowrap;
+  animation:popIn .45s .4s cubic-bezier(.3,1.6,.5,1) both,nudge 1.2s 1s ease-in-out infinite}
+.open-btn:hover .tap{background:var(--yellow)}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes nudge{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@media (prefers-reduced-motion:reduce){.open-btn{display:none}.logo-stage .char,.logo-stage .gappu{animation:none!important;opacity:1}}
 /* phones */
 @media (max-width:700px){
   .announce{font-size:.68rem;letter-spacing:.06em;padding:6px 10px}
@@ -300,6 +312,7 @@ footer .soon{color:var(--yellow);font-weight:700}
       </div>
         <div class="cover" aria-hidden="true"><span>This Saturday is here!</span></div>
         <div class="roll" aria-hidden="true"></div>
+        <button class="open-btn" id="openBtn" type="button" aria-label="Open This Saturday"><span class="tap">👆 Tap to rip it open!</span></button>
       </div>
       <img class="char subbu" src="art/subbu-crossed.webp" alt="Subbu">
       <img class="char arjun" src="art/arjun.webp" alt="Arjun">
@@ -495,6 +508,9 @@ footer .soon{color:var(--yellow);font-weight:700}
 </div></footer>
 
 <script>
+// Tap the cover to rip it open, then the crew flies in.
+const stage = document.querySelector('.logo-stage'), openBtn = document.getElementById('openBtn');
+openBtn.addEventListener('click', () => { stage.classList.add('opened'); openBtn.remove(); });
 // Both forms stay on the page; nothing is sent yet.
 const $ = id => document.getElementById(id);
 const validPhone = v => /^[6-9]\d{9}$/.test(v.replace(/[\s-]/g, ''));
