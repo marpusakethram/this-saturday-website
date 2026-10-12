@@ -48,7 +48,7 @@ section{padding-block:64px}
 /* announcement + header */
 .announce{background:var(--red);color:var(--white);text-align:center;font:600 .78rem var(--tag);letter-spacing:.12em;text-transform:uppercase;padding:7px 16px}
 .announce a{color:var(--white)}
-header{background:var(--white);border-bottom:3px solid var(--ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+header{background:var(--white);border-bottom:3px solid var(--ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-block:10px}
 .mini-logo{font:400 1.8rem/1 var(--sfx);letter-spacing:.04em;text-decoration:none;color:var(--red);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill;text-shadow:2px 2px 0 var(--ink);white-space:nowrap}
 nav{display:flex;gap:22px;flex-wrap:wrap;font:600 .82rem var(--tag);letter-spacing:.16em;text-transform:uppercase}
@@ -57,7 +57,7 @@ nav a:hover{color:var(--red)}
 .head-cta{justify-self:end}
 
 /* hero: logo only, on sky with sunburst and scalloped edge */
-.hero{position:relative;overflow:hidden;background:var(--sky);padding-block:56px 76px}
+.hero{position:relative;z-index:0;isolation:isolate;overflow:hidden;background:var(--sky);padding-block:56px 76px}
 .hero::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 40%,rgba(255,255,255,.16) 0 7deg,transparent 7deg 14deg)}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:22px;background:radial-gradient(circle at 22px 0,transparent 21px,var(--white) 22px) repeat-x 0 0/44px 22px}
 .hero .wrap{position:relative;display:grid;justify-items:center;gap:22px;text-align:center}
