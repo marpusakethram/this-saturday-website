@@ -223,11 +223,43 @@ footer .soon{color:var(--yellow);font-weight:700}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* phones */
+@media (max-width:700px){
+  .announce{font-size:.68rem;letter-spacing:.06em;padding:6px 10px}
+  .ann-loc{display:none}
+  header{position:static}
+  header .wrap{grid-template-columns:1fr auto;gap:6px 10px;padding-block:8px}
+  .mini-logo{font-size:1.45rem}
+  .head-cta{font-size:.66rem;letter-spacing:.08em;padding:9px 10px}
+  nav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:18px;font-size:.72rem;letter-spacing:.12em;padding-bottom:4px;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap}
+  .hero{padding-block:24px 56px}
+  .hero .wrap{gap:16px}
+  .logo-stage{width:100%;padding-inline:0;margin-top:52px;padding-bottom:50vw}
+  .char{top:auto;bottom:0;height:auto;width:30%}
+  .subbu{left:2%} .arjun{right:2%}
+  .gappu{width:38%;top:-12vw;bottom:auto}
+  .tagline{font-size:1.65rem}
+  .pitch{font-size:1rem;padding:10px 14px}
+  .ctas{flex-direction:column;align-items:stretch;width:100%}
+  .ctas .btn{text-align:center}
+  section{padding-block:48px}
+  .steps .step:last-child{grid-column:1/-1}
+  .stat{padding:24px 16px}
+  .panel-red{padding:24px 18px}
+  .price-body .then{font-size:2rem}
+  form{padding:20px}
+  .dlg-head{padding:22px 20px 4px}
+  dialog form{padding:4px 20px 22px}
+  footer{font-size:.85rem}
+}
 </style>
 <style>html,body{margin:0}</style>
 </head>
 <body>
-<div class="announce">Now delivering on Sarjapur Road, Bengaluru · First 4 Saturdays free for founding families · <a href="#join">Get 4 free Saturdays</a></div>
+<div class="announce"><span class="ann-loc">Now delivering on Sarjapur Road, Bengaluru · </span>First 4 Saturdays free for founding families · <a href="#join">Get 4 free Saturdays</a></div>
 
 <header><div class="wrap">
   <a class="mini-logo" href="#top">THIS SATURDAY</a>
