@@ -80,8 +80,7 @@ nav a:hover{color:var(--red)}
 @keyframes rollLeft{from{left:calc(100% - 23px)}to{left:-23px}}
 @keyframes ripOff{0%{transform:none;opacity:1}30%{transform:translate(-10px,4px) rotate(-6deg)}100%{transform:translate(-140%,-160%) rotate(-70deg);opacity:0;visibility:hidden}}
 .char{position:absolute;bottom:-8%;height:128%;width:auto;z-index:3;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35));animation-fill-mode:both}
-.subbu-m{display:none}
-.subbu{left:-5%;z-index:5;animation:flyLeft .9s 2s cubic-bezier(.2,.9,.3,1.25) both}
+.subbu{left:-15%;z-index:5;animation:flyLeft .9s 2s cubic-bezier(.2,.9,.3,1.25) both}
 .arjun{right:-17%;animation:flyRight .9s 2.25s cubic-bezier(.2,.9,.3,1.25) both}
 @keyframes flyLeft{0%{transform:translate(-260%,-120%) rotate(-35deg) scale(.6);opacity:0}15%{opacity:1}100%{transform:none;opacity:1}}
 @keyframes flyRight{0%{transform:translate(260%,-120%) rotate(35deg) scale(.6);opacity:0}15%{opacity:1}100%{transform:none;opacity:1}}
@@ -240,8 +239,7 @@ footer .soon{color:var(--yellow);font-weight:700}
   .hero .wrap{gap:16px}
   .logo-stage{width:100%;padding-inline:0;margin-top:52px;padding-bottom:50vw}
   .char{top:auto;bottom:0;height:56vw;width:auto}
-  .subbu{display:none}
-  .subbu-m{display:block;left:13%;animation:flyLeft .9s 2s cubic-bezier(.2,.9,.3,1.25) both}
+  .subbu{left:13%}
   .arjun{right:13%}
   .gappu{width:38%;top:-12vw;bottom:auto}
   .tagline{font-size:1.65rem}
@@ -287,8 +285,7 @@ footer .soon{color:var(--yellow);font-weight:700}
         <div class="cover" aria-hidden="true"><span>This Saturday is here!</span></div>
         <div class="roll" aria-hidden="true"></div>
       </div>
-      <img class="char subbu" src="art/subbu.webp" alt="Subbu">
-      <img class="char subbu-m" src="art/subbu-crossed.webp" alt="Subbu">
+      <img class="char subbu" src="art/subbu-crossed.webp" alt="Subbu">
       <img class="char arjun" src="art/arjun.webp" alt="Arjun">
       <div class="gappu" aria-hidden="true"><img src="art/gappu-sleep.webp" alt=""></div>
     </div>

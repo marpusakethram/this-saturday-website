@@ -36,6 +36,6 @@ For GitHub Pages: Settings → Pages → Deploy from a branch → `main` / root.
 
 | File | Used for |
 | --- | --- |
-| `art/subbu.webp`, `art/arjun.webp`, `art/gappu-sleep.webp` | Hero animation (transparent cut-outs) |
+| `art/subbu-crossed.webp`, `art/arjun.webp`, `art/gappu-sleep.webp` | Hero animation (transparent cut-outs) |
 | `art/crew.jpg` | Characters section and social share image |
 | `art/fest-cashbox.jpg`, `art/fest-empty.jpg`, `art/fest-reader.jpg` | Sample comic spread |
