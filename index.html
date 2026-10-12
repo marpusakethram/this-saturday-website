@@ -87,16 +87,13 @@ nav a:hover{color:var(--red)}
 .gappu{position:absolute;left:50%;bottom:86%;width:27%;z-index:4;transform:translateX(-50%);animation:dropIn .8s 3s cubic-bezier(.3,1.3,.5,1) both}
 .gappu img{width:100%;filter:drop-shadow(3px 3px 0 rgba(0,0,0,.35))}
 @keyframes dropIn{0%{transform:translate(-50%,-260%) rotate(25deg);opacity:0}20%{opacity:1}100%{transform:translateX(-50%) rotate(-2deg);opacity:1}}
-.z{position:absolute;right:-4%;top:-10%;font:400 1.6rem/1 var(--sfx);color:var(--white);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill;opacity:0;animation:snore 2.4s 3.9s infinite}
-.z2{animation-delay:4.7s;font-size:1.3rem} .z3{animation-delay:5.5s;font-size:1rem}
-@keyframes snore{0%{transform:translate(0,0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translate(26px,-46px) scale(1.2);opacity:0}}
 @media (max-width:700px){
   .logo-stage{width:100%;padding-inline:13%}
   .char{height:96%;bottom:-6%}
   .subbu{left:-2%} .arjun{right:-2%}
   .gappu{width:30%;bottom:80%}
 }
-@media (prefers-reduced-motion:reduce){.cover,.roll{display:none}.char,.gappu,.z{animation:none!important;opacity:1}}
+@media (prefers-reduced-motion:reduce){.cover,.roll{display:none}.char,.gappu{animation:none!important;opacity:1}}
 .tagline{font:400 clamp(1.8rem,4.2vw,2.8rem)/1.05 var(--sfx);letter-spacing:.03em;color:var(--white);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:4px 4px 0 var(--ink)}
 .pitch{font:800 1.15rem/1.45 var(--body);background:var(--white);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px 18px;max-width:46ch}
 
@@ -257,7 +254,7 @@ footer .soon{color:var(--yellow);font-weight:700}
       </div>
       <img class="char subbu" src="art/subbu.webp" alt="Subbu">
       <img class="char arjun" src="art/arjun.webp" alt="Arjun">
-      <div class="gappu" aria-hidden="true"><img src="art/gappu-sleep.webp" alt=""><span class="z z1">Z</span><span class="z z2">Z</span><span class="z z3">Z</span></div>
+      <div class="gappu" aria-hidden="true"><img src="art/gappu-sleep.webp" alt=""></div>
     </div>
     <h1 class="tagline">Think for yourself, on paper.</h1>
     <p class="pitch">AI can do your child's thinking for them. This Saturday makes sure they still do it themselves: a screen-free weekly workout for creativity and logic, on paper.</p>
@@ -337,7 +334,7 @@ footer .soon{color:var(--yellow);font-weight:700}
     <div class="jet"><img src="art/crew.jpg" alt="Gappu the white robot, Subbu in a white chikankari kurta and jeans, and Arjun in a mustard hoodie stand side by side"></div>
     <div class="who-list">
       <div class="who-card"><span class="role">The robot sidekick</span><b>GAPPU</b><p>Knows lots of facts, and sometimes gets them wrong. With Gappu, your child learns that even a computer can be wrong, so they practise thinking for themselves.</p></div>
-      <div class="who-card"><span class="role">The question-asker</span><b>SUBBU</b><p>Asks "why?" about everything and checks facts before she believes them. With Subbu, your child practises asking good questions and spotting what doesn't add up.</p></div>
+      <div class="who-card"><span class="role">The curious one</span><b>SUBBU</b><p>Asks "why?" about everything and checks facts before she believes them. With Subbu, your child practises asking good questions and spotting what doesn't add up.</p></div>
       <div class="who-card"><span class="role">The builder</span><b>ARJUN</b><p>Has big ideas and loves making things go WHOOSH. When a plan fails, he changes one thing and tries again. With Arjun, your child practises not giving up.</p></div>
     </div>
     <p class="note">All our characters are our own. We never use licensed cartoon characters.</p>
