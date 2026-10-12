@@ -224,6 +224,22 @@ footer .soon{color:var(--yellow);font-weight:700}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
+
+/* what's inside: yellow halftone with white comic cards */
+#inside{background-color:var(--yellow);background-image:radial-gradient(rgba(0,0,0,.12) 22%,transparent 24%);background-size:12px 12px}
+#inside .kick{color:var(--ink)}
+#inside .inside-grid .toc{gap:14px;column-gap:18px}
+#inside .toc li{background:var(--white);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:12px 16px}
+#inside .toc b{color:var(--red);-webkit-text-stroke:.5px var(--ink)}
+#inside .toc span{color:var(--ink)}
+#inside .strip .kick{color:var(--ink)}
+#inside .small{color:var(--ink)}
+/* price with the old price struck through */
+.price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;justify-content:center}
+.was{font:400 1.9rem/1 var(--sfx);color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:4px}
+.price-body .then{color:var(--red);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
+.price-body .then small{color:var(--ink);-webkit-text-stroke:0}
+.save{display:inline-block;background:var(--red);color:var(--white);font:600 .78rem var(--tag);letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;transform:rotate(-2deg)}
 /* phones */
 @media (max-width:700px){
   .announce{font-size:.68rem;letter-spacing:.06em;padding:6px 10px}
@@ -407,7 +423,8 @@ footer .soon{color:var(--yellow);font-weight:700}
     <div class="price-top"><b>First 4 Saturdays free</b><p>For founding families</p></div>
     <div class="price-body">
       <p>Then</p>
-      <span class="then">₹299 <small>for 4 Saturdays</small></span>
+      <div class="price-row"><span class="was" aria-label="Was 499 rupees">₹499</span><span class="then">₹299 <small>for 4 Saturdays</small></span></div>
+      <span class="save">Launch offer</span>
       <p class="small">Cancel anytime.</p>
       <a class="btn red" href="#join">Get 4 free Saturdays</a>
     </div>
